@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            text-align: center;
+        }
+        #map {
+            width: 800px;
+            height: 600px;
+            background-color: #ccc;
+            position: relative;
+            margin: 20px auto;
+        }
+        #map img{
+            position: absolute;
+            height: 600px;
+            left:-209px;
+            top: 0;
+            z-index: 99;
+        }
+        #goal {
+            margin: 30px;
+            float: left;
+        }
+        .btn {
+            padding: 5px;
+            margin: 10px 10px 10px 0;
+            height: 38px;
+            border: 1px solid #0094ff;
+            font-size: 22px;
+            text-align: center;
+            line-height: 38px;
+            color: #0094ff;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background-color: #0094ff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<p id="goal">goal:&nbsp;0</p>
+<input type="button" value="老年人手速" class="btn"/>
+<input type="button" value="单身手速" class="btn"/>
+    <div id="map">
+        <img src="./img/snake.jpg" alt=""/>
+    </div>
+
+<script src="js/food.js"></script>
+<script src="js/snake.js"></script>
+<script src="js/game.js"></script>
+<script>
+    var game = new Game();
+    game.food = new Food();
+    game.snake = new Snake();
+    game.chooseDifficulty();
+</script>
+
+</body>
+</html>
